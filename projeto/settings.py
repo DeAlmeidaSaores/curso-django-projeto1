@@ -56,8 +56,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #indico outras páginas que serão lidas com templates
+            #indico outras páginas que serão lidas com templates 
         ],
+        'DIRS': [BASE_DIR / 'base_templates'], #houve  a neccidade aqui pelo fato de a basta de que nao é um app instaldo na raiz do projeto, ou seja, sempre que eu precisar
+                                            #... que o django ache esse template fora do app instaldo recipe. Lá no recipes naão tive probelmas justamente por isso 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +119,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'base_static', #sempre que for trabalhar com pastas na base do projeto usa-se base_dir
+                            #so usa quando os meus arquivos estaticos forem globais
+]
+STATIC_ROOT = BASE_DIR / 'static'
