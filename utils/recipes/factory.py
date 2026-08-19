@@ -1,7 +1,8 @@
 from random import randint
 
 from faker import Faker
-
+#aqui eu servia pra criar dados falsos para a receita 
+#provavelmente será apagado
 
 def rand_ratio():
     return randint(840, 900), randint(473, 573)

@@ -35,7 +35,7 @@ urlpatterns +=  static(
     settings.MEDIA_URL,
     document_root=settings.MEDIA_ROOT)
 
-
+#static foi feita pra criar rotas que servem 
 #ensina ao Django, durante o desenvolvimento, a entregar arquivos diretamente pelo servidor.
 #qual URL o navegador vai usar pra pedir o arquivo    
 #em qual pasta do computador o Django procura esse arquivo
