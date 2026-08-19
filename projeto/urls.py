@@ -27,4 +27,15 @@ urlpatterns = [
     path('', include('recipes.urls')), 
 ]
 
-urlpatterns +=  static(settings.MEDIA_URL, docuemnto_root=settings.MEDIA_ROOT)
+urlpatterns +=  static( 
+    settings.STATIC_URL, 
+    document_root=settings.STATIC_ROOT) 
+
+urlpatterns +=  static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT)
+
+
+#ensina ao Django, durante o desenvolvimento, a entregar arquivos diretamente pelo servidor.
+#qual URL o navegador vai usar pra pedir o arquivo    
+#em qual pasta do computador o Django procura esse arquivo
