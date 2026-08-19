@@ -127,5 +127,5 @@ STATICFILES_DIRS = [ #significa: procure arquivos estáticos adicinais nessa pas
 STATIC_ROOT = BASE_DIR / 'static' #destino para onde o Django vai reunir os arquivos estáticos quando eu der collecstatic
 
 
-MEDIA_URL = '/media/' #aqui o navegador acessa esse arquivo Front
+MEDIA_URL = '/media/' #aqui define a URL que o navegador acessa esse arquivo Front
 MEDIA_ROOT = BASE_DIR / 'media' #aqui é onde vai ficar salvo as medias vindas do navegador Back
