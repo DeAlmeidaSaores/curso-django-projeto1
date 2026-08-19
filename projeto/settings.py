@@ -128,4 +128,4 @@ STATIC_ROOT = BASE_DIR / 'static' #destino para onde o Django vai reunir os arqu
 
 
 MEDIA_URL = '/media/' #aqui define a URL que o navegador acessa esse arquivo Front
-MEDIA_ROOT = BASE_DIR / 'media' #aqui é onde vai ficar salvo as medias vindas do navegador Back
+MEDIA_ROOT = BASE_DIR / 'media' #aqui é onde vai ficar salvo as medias back
