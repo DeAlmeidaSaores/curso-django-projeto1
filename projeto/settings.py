@@ -120,8 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATICFILES_DIRS = [ #significa: procure arquivos estáticos adicinais nessa pasta
     BASE_DIR / 'base_static', #sempre que for trabalhar com pastas na base do projeto usa-se base_dir
                             #so usa quando os meus arquivos estaticos forem globais
 ]
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static' #destino para onde o Django vai reunir os arquivos estáticos quando eu der collecstatic
+
+
+MEDIA_URL = '/media/' #aqui o navegador acessa esse arquivo Front
+MEDIA_ROOT = BASE_DIR / 'media' #aqui é onde vai ficar salvo as medias vindas do navegador Back
