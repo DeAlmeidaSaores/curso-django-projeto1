@@ -25,7 +25,9 @@ class Recipe(models.Model):#o id daqui n foi escrito mas o models.Model adiciona
     cover = models.ImageField(upload_to='recipes/cover/%Y/%m/%d/', blank=True, default='')
     category = models.ForeignKey(
         Category,
-        on_delete=models.SET_NULL, null=True
+        on_delete=models.SET_NULL, null=True, blank=True,
+        default=None, #detalhe importante: 
+                     # o null rentona null a category, ou seja exite e é nulo, por isso o default diz :quando não for prenchido não existe
     )
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True
