@@ -5,17 +5,21 @@ from .models import Recipe
 
 
 def home(request): #importante saber que aqui o meu objeto se chama recipe
-    recipes = Recipe.objects.all().order_by('-id') #aqui eu instanciel o recipe por isso posso usar o recipe.cover no for com recipe
+    recipes = Recipe.objects.filter(
+        is_published=True,
+    ).order_by('-id') #aqui eu instanciel o recipe por isso posso usar o recipe.cover no for com recipe
     return render(request, 'recipes/pages/home.html', context={
-    'recipes' : recipes,
+    'recipes' : recipes, # o 1 recipes é o nome do template
+                        # o 2 recipes é a variável com todas as receitas 
 })
 
 
 def Category(request, category_id): 
     recipes = Recipe.objects.filter(
-        category__id=category_id
+        category__id=category_id,#__ serve pra pegar o dado de category, ele ta no model recipe acessando através da foreingkey
+        is_published=True, 
         ).order_by('-id') 
-    return render(request, 'recipes/pages/home.html', context={
+    return render(request, 'recipes/pages/category.html', context={
     'recipes' : recipes,
 })
 
