@@ -4,7 +4,7 @@
     essa condição existe por que recipe.cover aponta pra uma foto
     e quando a foto não existe, quebra o template-->
         <div class="recipe-cover">
-            <a href="{% url 'recipes:recipe' recipe.id %}">
+            <a href="{% url 'recipes:recipe' recipe.id  %}">
                 <img src=" {{ recipe.cover.url }} " alt="Temporário">
             </a>
         </div>
