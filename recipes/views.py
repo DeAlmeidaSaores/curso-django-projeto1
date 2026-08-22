@@ -21,7 +21,7 @@ def Category(request, category_id):
         ).order_by('-id') 
     return render(request, 'recipes/pages/category.html', context={
     'recipes' : recipes,
-    'title' : f'{recipes.first().category.name}' #isso aqui ele pega dentro da QuerySet selecionado passo a passo. Então eu tenho no final uma string com um name Do model Category
+    'title' : f'{recipes.first().category.name }- Category ' #isso aqui ele pega dentro da QuerySet selecionado passo a passo. Então eu tenho no final uma string com um name Do model Category
 })
 
 
