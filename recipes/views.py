@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from utils.recipes.factory import make_recipe
 from .models import Recipe
@@ -19,9 +20,15 @@ def Category(request, category_id):
         category__id=category_id,#__ serve pra pegar o dado de category, ele ta no model recipe acessando através da foreingkey
         is_published=True, 
         ).order_by('-id') 
+
+    if not recipes:
+        raise Http404('Not Found')
+
     return render(request, 'recipes/pages/category.html', context={
     'recipes' : recipes,
     'title' : f'{recipes.first().category.name }- Category ' #isso aqui ele pega dentro da QuerySet selecionado passo a passo. Então eu tenho no final uma string com um name Do model Category
+
+
 })
 
 
