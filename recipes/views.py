@@ -15,12 +15,13 @@ def home(request): #importante saber que aqui o meu objeto se chama recipe
 
 
 def Category(request, category_id): 
-    recipes = Recipe.objects.filter(
+    recipes = Recipe.objects.filter( #aqui se forma a QuerySet
         category__id=category_id,#__ serve pra pegar o dado de category, ele ta no model recipe acessando através da foreingkey
         is_published=True, 
         ).order_by('-id') 
     return render(request, 'recipes/pages/category.html', context={
     'recipes' : recipes,
+    'title' : f'{recipes.first().category.name}' #isso aqui ele pega dentro da QuerySet selecionado passo a passo. Então eu tenho no final uma string com um name Do model Category
 })
 
 
