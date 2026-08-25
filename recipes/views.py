@@ -36,7 +36,7 @@ def Category(request, category_id):
 
 def recipe(request, id):
    recipe = Recipe.objects.filter(
-       pk=id,
+       pk=id, #pk é o primarykey (procure a Recipe cuja chave primária seja igual ao valor que recevi na variável id)
        is_published=True,
     ).order_by('-id').first()
 
