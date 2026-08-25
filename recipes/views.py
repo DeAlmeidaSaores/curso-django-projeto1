@@ -1,15 +1,15 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_list_or_404, render
 from utils.recipes.factory import make_recipe
 
 from .models import Recipe
-
+#OBS: NÃO USEI O get_list_pr_404 nas outras funções pq eu não quis
 
 
 def home(request): #importante saber que aqui o meu objeto se chama recipe
     recipes = Recipe.objects.filter(
         is_published=True,
-    ).order_by('-id') #aqui eu instanciel o recipe por isso posso usar o recipe.cover no for com recipe
+    ).order_by('-id') #aqui eu instanciei o recipe por isso posso usar o recipe.cover no for com recipe
     return render(request, 'recipes/pages/home.html', context={
     'recipes' : recipes, # o 1 recipes é o nome do template
                         # o 2 recipes é a variável com todas as receitas 
