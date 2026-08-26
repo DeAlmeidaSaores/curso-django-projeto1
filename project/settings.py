@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-y)g87e12o*1wd5f_t5pcxd13q7@fe%sf7x=brqq-nmnhuojeud
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #quais endereços/domínios podem acessar sua aplicação Django.
 
 
 # Application definition
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao_Paulo '
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
