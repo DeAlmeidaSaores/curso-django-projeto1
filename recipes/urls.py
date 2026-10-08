@@ -7,7 +7,7 @@ app_name = 'recipes' #serve para criar um namespace com código mais bontio
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('recipes/category/<int:category_id>/', views.Category, name="category"),
+    path('recipes/category/<int:category_id>/', views.category, name="category"),
     path('recipes/<int:id>/', views.recipe, name="recipe"),
     #aqui temos:
     # 1- URL que o site acessa

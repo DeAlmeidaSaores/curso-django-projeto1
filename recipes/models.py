@@ -9,7 +9,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Recipe(models.Model):#o id daqui n foi escrito mas o models.Model adiciona automaticamente
+class Recipe(models.Model):#modelo que define como uma receita é armazenada
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=165)
     slug = models.SlugField()
