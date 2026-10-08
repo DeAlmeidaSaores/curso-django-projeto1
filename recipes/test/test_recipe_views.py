@@ -60,7 +60,7 @@ class RecipeViewsTest(RecipeTestBase):
             reverse('recipes:category', kwargs={'category_id':1000})
         ) 
         self.assertIs(view.func, views.category)
-        
+    
     def test_recipe_category_view_returns_404_if_no_recipes_found(self):
         response = self.client.get(
             reverse('recipes:category', kwargs={'category_id':1000})
@@ -90,6 +90,23 @@ class RecipeViewsTest(RecipeTestBase):
         response = self.client.get(reverse('recipes:category', kwargs={'category_id' : recipe.category.id})) 
 
         self.assertEqual(response.status_code, 404)
+    
+    def test_recipe_category_template_loads_recipes(self): 
+        #ESSE TEST NÃO FOI FEITO PELO PROFESSOR
+        recipe = self.make_recipe()
+
+        response = self.client.get(
+            reverse(
+                'recipes:category',
+                kwargs={'category_id': recipe.category.id}
+            )
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'recipes/pages/category.html'
+        )
 
     def test_recipe_detail_view_function_is_correct(self):
         view = resolve(
